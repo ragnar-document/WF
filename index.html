@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <script src="./data.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <title>css</title>
+</head>
+<body>
+    <div id="app">
+        <el-container>
+            <el-header class="css-header">
+                <h1 class="css-title">css选择器</h1>
+            </el-header>
+            <el-main>
+                <el-collapse v-model="cssData" class="css-list">
+                    <el-collapse-item v-for="(item,index) in cssData" :title="item.title" :name="index" >
+                            <div v-for="i in item.list" style="margin: 10px; border:1px solid #eee">
+                                <h3>{{i.item}}</h3>
+                                <div>{{i.intro}}</div>
+                                <el-link type="primary" :href="i.url">去MDN查看详情</el-link>
+                            </div>
+                    </el-collapse-item>
+                </el-collapse>
+            </el-main>
+        </el-container>
+    </div>
+</body>
+<script>
+    console.log(cssData)
+    
+    var app = new Vue({
+        el: '#app',
+        data: {
+            cssData: cssData
+        }
+    })
+</script>
+</html>

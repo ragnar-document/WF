@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.css-header{
+    text-align: center;
+    background: #2c3e50;
+    color: #fff;
+    line-height: 60px;
+}
+.css-list{
+    margin: 0 auto;
+    width: 500px;
+}
+  .text {
+      font-size: 14px;
+  }
+
+  .item {
+      margin-bottom: 18px;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+      display: table;
+      content: "";
+  }
+
+  .clearfix:after {
+      clear: both
+  }
