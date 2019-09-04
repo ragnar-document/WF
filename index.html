@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="./vue.js"></script>
     <script src="./data.js"></script>
+    <script src="./jsData.js"></script>
     <!-- 引入样式 -->
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <!-- 引入组件库 -->
@@ -17,9 +18,9 @@
     <div id="app">
         <el-container>
             <el-header class="css-header">
-                <h1 class="css-title">css选择器</h1>
+                <h1 class="css-title">前端知识查找-Ragnar</h1>
             </el-header>
-            <el-main>
+            <el-main style="display:flex">
                 <el-collapse v-model="cssData" class="css-list">
                     <el-collapse-item v-for="(item,index) in cssData" :title="item.title" :name="index" >
                             <div v-for="i in item.list" style="margin: 10px; border:1px solid #eee">
@@ -29,17 +30,27 @@
                             </div>
                     </el-collapse-item>
                 </el-collapse>
+                <el-collapse v-model="jsData" class="css-list">
+                    <el-collapse-item v-for="(item,index) in jsData" :title="item.title" :name="index">
+                        <div v-for="i in item.list" style="margin: 10px; border:1px solid #eee">
+                            <h3>{{i.name}}</h3>
+                            <div>{{i.intro}}</div>
+                            <div>{{i.relevant}}</div>
+                            <div>{{i.methods}}</div>
+                        </div>
+                    </el-collapse-item>
+                </el-collapse>
             </el-main>
         </el-container>
     </div>
 </body>
 <script>
-    console.log(cssData)
     
     var app = new Vue({
         el: '#app',
         data: {
-            cssData: cssData
+            cssData: cssData,
+            jsData: jsData
         }
     })
 </script>
